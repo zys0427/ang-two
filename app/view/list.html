@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            查询：<input ng-model="query">
+            <select ng-model="field">
+                <option value="age">age</option>
+                <option value="id">id</option>
+            </select>
+        </div>
+        <div class="col-md-9">
+            <ul class="phones">
+                <li ng-repeat="list in data | filter:query | orderBy:field" class="thumbnail">
+                    <a href="#/info/{{list.id}}" class="thumb"><img ng-src="{{list.imageUrl}}"></a>
+                    <a href="#/info/{{list.id}}">{{list.name}}</a>
+                    <p>
+                        {{list.snippet}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
